@@ -15,25 +15,15 @@ import java.util.Scanner;
 class Main {
 
     public static void main(String[] args) {
-
-        Scanner userheight = new Scanner(System.in);
         System.out.print("Enter your height:");   // вводи в метрах 1,8   через запятую
-        double height = userheight.nextDouble();
+        float userHeight = new Scanner(System.in).nextFloat();
 
-        //использовал System.out.print() т.к тогда оно просит вводить на той же строке
-
-        Scanner usermass = new Scanner(System.in);
         System.out.print("Enter your mass:");   // тоже через запятую
-        double mass = usermass.nextDouble();
+        float userMass = new Scanner(System.in).nextFloat();
 
-        double bmi = mass/(height*height);
-
-        if(bmi>25.0){    // формула рабочая, я проверил, мож попробовать
-            System.out.println("Youre owerweight!!!");
-        } else {
-            System.out.println("Youre stick 0___0");
-        }
-
+        float bmi = userMass / (userHeight*userHeight);
+        String bMI = (bmi>25.0) ? "Youre heavy" : "Youre stick";
+        System.out.println(bMI);
         }
     }
 
@@ -46,17 +36,11 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-
-        Scanner userNumber = new Scanner(System.in);
         System.out.print("Введите любое целое число:");
-        int number = userNumber.nextInt();
-
-        if(number%2 == 0){
-            System.out.println("Ваше число парное");
-        } else {
-            System.out.println("Ваше число непарное");
-        }
-
+        int userNumber = new Scanner(System.in).nextInt();
+        
+        String numberDividing = (userNumber % 2 == 0) ? "Ваше число парное" : "Ваше число непарное";
+        System.out.println(numberDividing);
     }
 }
 
